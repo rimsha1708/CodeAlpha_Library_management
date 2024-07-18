@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Book Library</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Personal Book Library</h1>
+
+        <div class="add-book">
+            <h2>Add Book</h2>
+            <input type="text" id="bookTitle" placeholder="Book Title">
+            <input type="text" id="bookAuthor" placeholder="Author">
+            <input type="text" id="bookCategory" placeholder="Category">
+            <button onclick="addBook()">Add Book</button>
+        </div>
+
+        <div class="search-books">
+            <h2>Search Books</h2>
+            <input type="text" id="searchQuery" placeholder="Search by title, author, or category" oninput="searchBooks()" onkeypress="handleKeyPress(event)">
+        </div>
+
+        <div class="book-list">
+            <h2>Book List</h2>
+            <ul id="bookList"></ul>
+        </div>
+
+        <div class="borrowing-history">
+            <h2>Borrowing History</h2>
+            <ul id="borrowingHistory"></ul>
+        </div>
+    </div>
+
+    <div id="borrowModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeBorrowModal()">&times;</span>
+            <h2>Borrow Book</h2>
+            <input type="text" id="borrowerName" placeholder="Your Name">
+            <input type="tel" id="borrowerPhone" placeholder="Phone Number">
+            <input type="email" id="borrowerEmail" placeholder="Email">
+            <input type="date" id="borrowDate" value="">
+            <button id="confirmBorrow" onclick="confirmBorrow()">Confirm Borrow</button>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
